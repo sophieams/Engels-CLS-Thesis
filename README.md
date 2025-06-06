@@ -4,7 +4,7 @@ This thesis consists of two parts: one relating to data-driven machine learning 
 theoretical mathematical modeling of suicide. In the data-driven machine learning section, we use GNNs to explore their capabilities with next-step prediction of symptoms related to suicidality. We also perform some risk-based clustering.
 
 ## Data-driven Section
-The data necessary to reproduce these results is available upon request to thomas.forkmann@uni-due.de. The original study from the data collection is summarized in the following paper.
+The data necessary to reproduce these results is available upon request. If interested, send requests to thomas.forkmann@uni-due.de. The original study from the data collection is summarized in the following paper.
 
 Thomas Forkmann et al. “Assessing suicidality in real time: A psychometric evaluation of self-report items for the assessment of suicidal ideation and its proximal risk factors using ecological momentary assessments.” In: Journal of Abnormal Psychology 127.8 (Nov. 2018), pp. 758–769. issn: 0021-843X. doi: 10.1037/abn0000381.
 
