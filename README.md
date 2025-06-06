@@ -11,7 +11,7 @@ Thomas Forkmann et al. “Assessing suicidality in real time: A psychometric eva
 Given that the data is unavailable, the scripts are provided with 'data.csv' placeholders. However, 
 given new data, and with adjustment of the column names/symptoms of interest, the scripts are still useful.
 
-![image](Data Science Materials/plots/1_GNN_comparison.png)
+![image](/Data%20Science%20Materials/plots/1_GNN_comparison.png)
 
 ### Features
 1. **Process Data**
@@ -38,7 +38,7 @@ Here, we extended the model described in Wang et al. (2023) to include social fa
 Shirley B Wang et al. Mathematical and Computational Modeling of Suicide as a
 Complex Dynamical System. Sept. 2023. doi: 10.31234/osf.io/b29cs.
 
-![image](Modeling Materials/plots/example_run.png)
+![image](/Modeling%20Materials/plots/example_run.png)
 
 ### Features
 1. **Wang Model**
