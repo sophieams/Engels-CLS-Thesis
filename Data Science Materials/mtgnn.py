@@ -25,7 +25,7 @@ class SymptomMTGNN(torch.nn.Module):
             kernel_set=[2, 3],
             kernel_size=3,
             dropout=0.3,
-            subgraph_size=5,
+            subgraph_size=10,
             node_dim=40,
             dilation_exponential=1,
             conv_channels=32,

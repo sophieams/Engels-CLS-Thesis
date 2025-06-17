@@ -112,7 +112,7 @@ def kmeans_clustering(data, selected_features, k, plot_pca=False):
 
     return final_sil_score, clustered_data
 
-def analyze_clusters(clustered_data, selected_features, significance_threshold=0.05, max_plots=4):
+def analyze_clusters(clustered_data, selected_features, significance_threshold=0.05, max_plots=2):
     """
     Function to analyze the statistical properties of the data in each cluster. 
     For non-normal data, we use the Mann-Whitney U test to determine differences between two distributions.
@@ -171,8 +171,9 @@ def analyze_clusters(clustered_data, selected_features, significance_threshold=0
     axes[0].set_xlabel("Skewness")
     axes[1].set_title("Kurtosis by Cluster")
     axes[1].set_xlabel("Kurtosis")
-    axes[2].set_title("Zerocross by Cluster")
-    axes[2].set_xlabel("Zerocross")
+    # The following lines do not work with the fake data, but would perhaps with different data.
+    # axes[2].set_title("Zerocross by Cluster")
+    # axes[2].set_xlabel("Zerocross")
     cluster_labels = clustered_data["Cluster"].unique()
     cluster_labels.sort()
     plt.tight_layout()
@@ -247,10 +248,10 @@ def cluster_by_error(clustered_data, gnn_type):
     - gnn_type: either "AGCRN" or "MTGNN"
     Returns nothing.
     """
-    df_errors_mtgnn = pd.read_csv("analysis_data/gnn_learned_seq_length_5_predictions_1.csv")
-    df_errors_agcrn = pd.read_csv("analysis_data/agcrn_seq_length_5_predictions.csv")
-    df_errors_mtgnn["Errors"] = df_errors_mtgnn["Errors"].apply(eval)
-    df_errors_agcrn["Errors"] = df_errors_agcrn["Errors"].apply(eval)
+    df_errors_mtgnn = pd.read_csv("analysis_data/gnn_learned_seq_length_5_10_nodes.csv")
+    df_errors_agcrn = pd.read_csv("analysis_data/agcrn_seq_length_5_predictions_10_nodes.csv")
+    df_errors_mtgnn["Errors"] = df_errors_mtgnn["Normalized_Errors"].apply(eval)
+    df_errors_agcrn["Errors"] = df_errors_agcrn["Normalized_Errors"].apply(eval)
 
     if gnn_type == "MTGNN":
         df_errors = df_errors_mtgnn

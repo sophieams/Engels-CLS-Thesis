@@ -30,16 +30,16 @@ def plot_individual_predictions(id):
     Input:
     - id: the id of the subject we want to plot the values for.
     """
-    df_mtgnn = pd.read_csv("analysis_data/gnn_learned_seq_length_5_predictions_1.csv")
-    df_agcrn = pd.read_csv("analysis_data/agcrn_seq_length_5_predictions.csv")
+    df_mtgnn = pd.read_csv("analysis_data/gnn_learned_seq_length_5_10_nodes.csv")
+    df_agcrn = pd.read_csv("analysis_data/agcrn_seq_length_5_predictions_10_nodes.csv")
 
     # Convert string lists back to Python lists
     df_mtgnn["Predicted_Values"] = df_mtgnn["Predicted_Values"].apply(eval)
-    df_mtgnn["Errors"] = df_mtgnn["Errors"].apply(eval)
+    df_mtgnn["Errors"] = df_mtgnn["Normalized_Errors"].apply(eval)
     df_mtgnn["True_Values"] = df_mtgnn["True_Values"].apply(eval)
     
     df_agcrn["Predicted_Values"] = df_agcrn["Predicted_Values"].apply(eval)
-    df_agcrn["Errors"] = df_agcrn["Errors"].apply(eval)
+    df_agcrn["Errors"] = df_agcrn["Normalized_Errors"].apply(eval)
 
     predictions_mtgnn = df_mtgnn.loc[df_mtgnn["ID"] == id, "Predicted_Values"].values[0]
     true_values = df_mtgnn.loc[df_mtgnn["ID"] == id, "True_Values"].values[0]
@@ -157,7 +157,7 @@ def plot_variance_error_per_symptom():
     df_errors = pd.concat([df_errors_mtgnn, df_errors_agcrn], ignore_index=True)
 
     # Original data for variances
-    df_original, _ = pyreadstat.read_sav("original_data/data.sav")
+    df_original = pd.read_csv("data.csv")
     symptom_labels = ['Energy', 'Valence', 'Calmness', 'PA', 'Anxiety', 
                       'Depression', 'PB', 'TB', 'Hopelessness', 'SI']
     variance_data = []
