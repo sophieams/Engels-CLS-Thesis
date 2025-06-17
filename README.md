@@ -8,8 +8,8 @@ The data necessary to reproduce these results is available upon request. If inte
 
 Thomas Forkmann et al. “Assessing suicidality in real time: A psychometric evaluation of self-report items for the assessment of suicidal ideation and its proximal risk factors using ecological momentary assessments.” In: Journal of Abnormal Psychology 127.8 (Nov. 2018), pp. 758–769. issn: 0021-843X. doi: 10.1037/abn0000381.
 
-Given that the data is unavailable, the scripts are provided with 'data.csv' placeholders. However, 
-given new data, and with adjustment of the column names/symptoms of interest, the scripts are still useful.
+Given that the data is unavailable, the scripts are provided with a fake dataset called 'data.csv'. However, 
+given new data, and with adjustment of the column names/symptoms of interest, the scripts are still useful for a new application.
 
 ![image](/Data%20Science%20Materials/plots/1_GNN_comparison.png)
 
